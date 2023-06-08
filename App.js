@@ -2,11 +2,13 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   let x = 1;
-  console.log("Changes Saved!"); // Logging statements
+  const handlePress = () => console.log("Text pressed")
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello React Native!</Text>
+      <Text numberOfLines={1} onPress={handlePress}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo justo, sodales at sem sit amet, euismod vestibulum justo. Pellentesque interdum at ipsum et placerat.
+      </Text>
     </SafeAreaView>
   );
 }
