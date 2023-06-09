@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, Image, SafeAreaView } from 'react-native';
 
 export default function App() {
   let x = 1;
@@ -9,6 +9,8 @@ export default function App() {
       <Text numberOfLines={1} onPress={handlePress}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo justo, sodales at sem sit amet, euismod vestibulum justo. Pellentesque interdum at ipsum et placerat.
       </Text>
+
+      <Image source={require("./assets/splash.png")}/>
     </SafeAreaView>
   );
 }
@@ -16,8 +18,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
