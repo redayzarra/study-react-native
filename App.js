@@ -7,10 +7,17 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo justo, sodales at sem sit amet, euismod vestibulum justo. Pellentesque interdum at ipsum et placerat.
+        My React Native Project
       </Text>
 
-      <Image source={require("./assets/splash.png")}/>
+      <Image 
+      blurRadius={0}
+      fadeDuration={1000}
+      source={{ 
+        width: 200,
+        height: 300,
+        uri: "https://picsum.photos/200/300" 
+      }}/>
     </SafeAreaView>
   );
 }
