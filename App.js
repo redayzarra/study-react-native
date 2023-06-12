@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image, SafeAreaView, TouchableHighlight } from 'react-native';
+import { Button, SafeAreaView, StyleSheet } from 'react-native';
 
 export default function App() {
   let x = 1;
@@ -6,19 +6,10 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        My React Native Project
-      </Text>
-      <TouchableHighlight onPress={() => console.log("Image clicked!")}>
-        <Image 
-        blurRadius={0}
-        fadeDuration={1000}
-        source={{ 
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300" 
-        }}/>
-      </TouchableHighlight>
+      <Button 
+        color="orange"
+        title='Click me' 
+        onPress={() => console.log("Button clicked!")} />
     </SafeAreaView>
   );
 }
