@@ -1,4 +1,4 @@
-import { Button, SafeAreaView, StyleSheet } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Alert } from 'react-native';
 
 export default function App() {
   let x = 1;
@@ -7,9 +7,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Button 
-        color="orange"
         title='Click me' 
-        onPress={() => console.log("Button clicked!")} />
+        onPress={() => 
+          Alert.prompt("My alert", "My message", text => console.log(text))
+        }
+      />
     </SafeAreaView>
   );
 }
