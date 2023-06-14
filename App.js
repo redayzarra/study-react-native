@@ -5,13 +5,23 @@ export default function App() {
   const orientation = useDeviceOrientation();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style = {{
+    <View style={{
+      backgroundColor: "#fff",
+      flex: 1,
+    }}>
+      <View style={{
         backgroundColor: "dodgerblue",
-        width: "100%",
-        height: orientation == "landscape" ? "100%" : "30%",
-      }}></View>
-    </SafeAreaView>
+        flex: 2,
+      }} />
+      <View style={{
+        backgroundColor: "gold",
+        flex: 1,
+      }} />
+      <View style={{
+        backgroundColor: "tomato",
+        flex: 1,
+      }} />
+    </View>
   );
 }
  

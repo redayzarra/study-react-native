@@ -3,7 +3,7 @@
     "name": "study-react-native",
     "slug": "study-react-native",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "potrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
