@@ -1,11 +1,12 @@
 import React from "react";
-import { ImageBackground, View, StyleSheet } from "react-native-web";
+import { ImageBackground, View, StyleSheet } from "react-native";
+import bgImage from "../assets/background.jpg";
 
-function WelcomeScreen(props) {
+function WelcomeScreen() {
   return (
     <ImageBackground
-      source={require("../assets/chair.jpg")}
-      styles={styles.background}
+      style={styles.background}
+      source={require("../assets/background.jpg")}
     >
       <View style={styles.loginButton}></View>
     </ImageBackground>
