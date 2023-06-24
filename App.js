@@ -1,6 +1,7 @@
 import { View } from "react-native";
 
 import AppText from "./app/components/AppText";
+import AppButton from "./app/components/AppButton";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       }}
     >
       <AppText>I love Ashley!</AppText>
+      <AppButton title="Login" onPress={() => console.log("Button tapped!")} />
     </View>
   );
 }
