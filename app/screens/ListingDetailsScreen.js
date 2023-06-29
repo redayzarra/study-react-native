@@ -3,7 +3,9 @@ import AppText from "../components/AppText.ios";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
-function ListingDetailsScreen(props) {
+import { StyleSheet } from "react-native";
+
+function ListingDetailsScreen() {
   return (
     <View>
       <Image style={styles.image} source={require("../assets/jacket.jpg")} />
