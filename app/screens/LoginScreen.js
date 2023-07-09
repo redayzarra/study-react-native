@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import { Image, StyleSheet } from "react-native";
-import Screen from "../components/Screen";
-import AppTextInput from "../components/AppTextInput";
-import AppButton from "../components/AppButton";
 import { Formik } from "formik";
+import { Image, StyleSheet } from "react-native";
+import AppButton from "../components/AppButton";
+import AppTextInput from "../components/AppTextInput";
+import Screen from "../components/Screen";
 
 function LoginScreen(props) {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
@@ -24,7 +20,7 @@ function LoginScreen(props) {
               autoCorrect={false}
               icon="email"
               keyboardType="email-address"
-              onChangeText={(text) => setEmail(text)}
+              onChangeText={handleChange("email")}
               placeholder="Email"
               textContentType="emailAddress"
             />
@@ -32,15 +28,12 @@ function LoginScreen(props) {
               autoCapitalize="none"
               autoCorrect={false}
               icon="lock"
-              onChangeText={(text) => setPassword(text)}
+              onChangeText={handleChange("password")}
               placeholder="Password"
               secureTextEntry
               textContentType="password"
             />
-            <AppButton
-              title="Login"
-              onPress={() => console.log(email, password)}
-            />
+            <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
       </Formik>
