@@ -16,14 +16,37 @@ const validationSchema = Yup.object.shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1},
-  { label: "Clothing", value: 2},
-  { label: "Camera", value: 3},
-  { label: "Shoes", value: 4},
-]
+  { label: "Furniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Camera", value: 3 },
+  { label: "Shoes", value: 4 },
+];
 
 function ListingEditScreen(props) {
-  return <div></div>;
+  return (
+    <Screen style={styles.container}>
+      <AppForm
+        initialValues={{
+          title: "",
+          price: "",
+          description: "",
+          category: null,
+        }}
+        onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        <AppFormField maxLength={255} name="title" placeholder="Title" />
+        <AppFormField
+          keyboardType="numeric"
+          maxLength={8}
+          name="price"
+          placeholder="Price"
+        />
+      </AppForm>
+    </Screen>
+  );
 }
+
+const styles = StyleSheet.create({});
 
 export default ListingEditScreen;
