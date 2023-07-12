@@ -3,8 +3,8 @@ import * as Yup from "yup";
 import Screen from "../components/Screen";
 import {
   AppForm,
-  AppFormField,
-  AppFormPicker,
+  AppFormField as FormField,
+  AppFormPicker as Picker,
   SubmitButton,
 } from "../components/forms";
 
@@ -35,13 +35,22 @@ function ListingEditScreen(props) {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField maxLength={255} name="title" placeholder="Title" />
-        <AppFormField
+        <FormField maxLength={255} name="title" placeholder="Title" />
+        <FormField
           keyboardType="numeric"
           maxLength={8}
           name="price"
           placeholder="Price"
         />
+        <Picker items={categories} name="category" placeholder="Category" />
+        <FormField
+          maxLength={255}
+          multiline
+          name="description"
+          numberOfLines={3}
+          placeholder="Description"
+        />
+        <SubmitButton title="Post" />
       </AppForm>
     </Screen>
   );
