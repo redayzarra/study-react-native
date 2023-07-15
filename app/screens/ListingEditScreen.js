@@ -17,10 +17,10 @@ const validationSchema = Yup.object.shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
-  { label: "Shoes", value: 4 },
+  { label: "Furniture", value: 1, backgroundColor: "red", icon: "apps" },
+  { label: "Clothing", value: 2, backgroundColor: "green", icon: "email" },
+  { label: "Camera", value: 3, backgroundColor: "blue", icon: "lock" },
+  { label: "Shoes", value: 4, backgroundColor: "orange", icon: "email" },
 ];
 
 function ListingEditScreen(props) {
@@ -47,6 +47,7 @@ function ListingEditScreen(props) {
         <Picker
           items={categories}
           name="category"
+          numberOfColumns={3}
           PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width="50%"

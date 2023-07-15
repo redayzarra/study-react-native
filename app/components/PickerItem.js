@@ -4,13 +4,12 @@ import AppText from "./AppText";
 import { StyleSheet } from "react-native";
 import { useState } from "react";
 
-function PickerItem({ label, onPress }) {
-
+function PickerItem({ item, onPress }) {
   const [category, setCategory] = useState();
 
   return (
     <TouchableOpacity onPress={onPress}>
-      <AppText style={styles.text}>{label}</AppText>
+      <AppText style={styles.text}>{item.label}</AppText>
     </TouchableOpacity>
   );
 }
