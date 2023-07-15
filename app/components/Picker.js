@@ -5,8 +5,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import defaultStyles from "../config/styles";
-import AppText from "./AppText";
+import defaultStyles from "../../config/styles";
+import AppText from "../AppText";
 import { useState } from "react";
 import { Button } from "react-native";
 import Screen from "./Screen";
