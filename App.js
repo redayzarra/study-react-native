@@ -1,14 +1,15 @@
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
-import LoginScreen from "./app/screens/LoginScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
+import { useEffect } from "react";
+import Screen from "./app/components/Screen";
+import * as ImagePicker from "expo-image-picker";
 
 export default function App() {
-  return (
-    <ListingEditScreen />
-  );
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted) alert("You need to grant camera roll permissions!");
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
+  return <Screen></Screen>;
 }
