@@ -20,10 +20,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     height: 100,
     justifyContent: "center",
+    overflow: "hidden",
     width: 100,
   },
   image: {
-    width: "10"
-  }
+    height: "100%",
+    width: "100%",
+  },
 });
 export default ImageInput;
