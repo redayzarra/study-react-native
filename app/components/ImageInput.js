@@ -1,17 +1,40 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { StyleSheet, TouchableWithoutFeedback, View } from "react-native";
+import {
+  Alert,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import colors from "../config/colors";
 import * as ImagePicker from "expo-image-picker";
+import { useEffect } from "react";
 
-function ImageInput({ imageUri }) {
+function ImageInput({ imageUri, onChangeImage }) {
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted) alert("You need to grant camera roll permissions!");
+  };
+
   const handlePress = () => {
     if (!imageUri) selectImage();
+    else
+      Alert.alert("Delete", "Do you want to delete this image?", [
+        { text: "Yes", onPress: () => onChangeImage(null) },
+        { text: "No" },
+      ]);
   };
 
   const selectImage = async () => {
     try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.canceled) setImageUri(result.uri);
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 0.5,
+      });
+      if (!result.canceled) onChangeImage(result.uri);
     } catch (error) {
       console.log("Error reading an image!");
     }
