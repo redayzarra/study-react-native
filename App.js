@@ -5,29 +5,23 @@ import Screen from "./app/components/Screen";
 import ImageInput from "./app/components/ImageInput";
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setimageUris] = useState([]);
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert("You need to grant camera roll permissions!");
+  const handleAdd = (uri) => {
+    setimageUris([...imageUris, uri]);
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.canceled) setImageUri(result.uri);
-    } catch (error) {
-      console.log("Error reading an image!");
-    }
+  const handleRemove = (uri) => {
+    setimageUris(imageUris.filter((imageUri) => imageUri != uri));
   };
 
   return (
     <Screen>
-      <ImageInput imageUri={imageUri} onChangeImage={uri = setImageUri(uri)}/>
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      />
     </Screen>
   );
 }
