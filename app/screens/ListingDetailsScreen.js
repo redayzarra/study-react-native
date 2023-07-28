@@ -5,7 +5,7 @@ import colors from "../config/colors";
 
 import { StyleSheet } from "react-native";
 
-function ListingDetailsScreen() {
+function ListingDetailsScreen({ route }) {
   return (
     <View>
       <Image style={styles.image} source={require("../assets/jacket.jpg")} />
