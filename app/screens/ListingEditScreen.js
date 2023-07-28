@@ -7,10 +7,11 @@ import {
   FormField,
   FormPicker as Picker,
   SubmitButton,
+  FormImagePicker,
 } from "../components/forms";
+
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import Screen from "../components/Screen";
-import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
 
 const validationSchema = Yup.object().shape({
@@ -129,4 +130,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
 export default ListingEditScreen;
