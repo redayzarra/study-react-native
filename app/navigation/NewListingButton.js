@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import colors from "../config/colors";
-import { TouchableOpacity } from "react-native";
 
 function NewListingButton({ onPress }) {
   return (
@@ -17,6 +17,7 @@ function NewListingButton({ onPress }) {
     </TouchableOpacity>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
@@ -30,4 +31,5 @@ const styles = StyleSheet.create({
     width: 80,
   },
 });
+
 export default NewListingButton;
