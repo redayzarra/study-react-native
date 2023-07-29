@@ -2,16 +2,14 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import {
-  Form,
-  FormField,
-  FormPicker as Picker,
-  SubmitButton,
-  FormImagePicker,
-} from "../components/forms";
+import { AppForm as Form } from "../components/forms/Form";
+import { AppFormField as FormField } from "../components/forms/FormField";
+import { AppFormPicker as Picker } from "../components/forms/FormPicker";
+import SubmitButton from "../components/forms/SubmitButton";
 
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import Screen from "../components/Screen";
+import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
 
 const validationSchema = Yup.object().shape({
@@ -130,5 +128,4 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
-
 export default ListingEditScreen;
