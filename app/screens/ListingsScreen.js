@@ -1,16 +1,14 @@
-import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import AppButton from "../components/Button";
 
-import Card from "../components/Card";
-import colors from "../config/colors";
+import { useEffect, useState } from "react";
 import listingsApi from "../api/listings";
-import routes from "../navigation/routes";
+import Card from "../components/Card";
 import Screen from "../components/Screen";
-import { useState } from "react";
-import { useEffect } from "react";
 import AppText from "../components/Text";
+import colors from "../config/colors";
+import routes from "../navigation/routes";
 
 function ListingsScreen({ navigation }) {
   const [listings, setListings] = useState([]);
