@@ -1,6 +1,4 @@
-import React from "react";
 import { Modal, StyleSheet, View } from "react-native";
-import Text from "../components/Text";
 import * as Progress from "react-native-progress";
 import colors from "../config/colors";
 
