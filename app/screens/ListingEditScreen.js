@@ -87,7 +87,7 @@ function ListingEditScreen() {
   const [uploadVisible, setUploadVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  const handleSubmit = async (listing) => {
+  const handleSubmit = async (listing, { resetForm }) => {
     setProgress(0);
     setUploadVisible(true);
 
@@ -100,7 +100,8 @@ function ListingEditScreen() {
       setUploadVisible(false);
       return alert("Could not save the listing.");
     }
-    alert("Success!");
+    
+    resetForm();
   };
 
   return (
