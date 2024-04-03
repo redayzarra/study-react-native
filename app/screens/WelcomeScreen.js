@@ -17,13 +17,14 @@ function WelcomeScreen({ navigation }) {
       </View>
       <View style={styles.buttonsContainer}>
         <Button
-          title="Login"
           onPress={() => navigation.navigate(routes.LOGIN)}
+          title="Login"
+          color="primary"
         />
         <Button
+          onPress={() => navigation.navigate(routes.REGISTER)}
           title="Register"
           color="secondary"
-          onPress={() => navigation.navigate(routes.REGISTER)}
         />
       </View>
     </ImageBackground>
